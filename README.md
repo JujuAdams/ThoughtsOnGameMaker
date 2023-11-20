@@ -29,5 +29,5 @@ I'll only accept pull requests that fulfill the following requirements:
 - **Small** — The PR should continue as few changes as possible. If it's a big change, it's harder to review.
 - **Specific** — The PR should address only the specific feature or bug and not contain multiple fixes for multiple things at the same time.
 - **Solution-oriented** — The PR should cover a known issue. PRs that "tidy up" a project are unhelpful.
-- **Commented** — Comment your code, folks
+- **Commented** — Comment your code, folks.
 - **No IDE / GameMaker updates** — The PR should not require updating the GameMaker IDE or using a different runtime than the library is built for.
