@@ -27,7 +27,7 @@ Examples:
 I'll only accept pull requests that fulfill the following requirements:
 
 - **Consulted** — Check whether the PR is, in principle, acceptable with the repo maintainer before spending your time making one.
-- **Small** — The PR should continue as few changes as possible. If it's a big change, it's harder to review.
+- **Small** — The PR should contain as few changes as possible. If it's a big change, it's harder to review.
 - **Specific** — The PR should address only the specific feature or bug and not contain multiple fixes for multiple things at the same time.
 - **Solution-oriented** — The PR should cover a known issue. PRs that "tidy up" a project are unhelpful.
 - **Commented** — Comment your code, folks.
