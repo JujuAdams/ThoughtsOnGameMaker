@@ -32,3 +32,5 @@ I'll only accept pull requests that fulfill the following requirements:
 - **Solution-oriented** — The PR should cover a known issue. PRs that "tidy up" a project are unhelpful.
 - **Commented** — Comment your code, folks.
 - **No IDE / GameMaker updates** — The PR should not require updating the GameMaker IDE or using a different runtime than the library is built for.
+
+I hate writing documentation. **Special love is given to people who fix typos or broken links in documentation, or generally improve documentation at all.**
