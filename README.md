@@ -4,7 +4,7 @@
 
 &nbsp;
 
-### Versioning
+## Versioning
 
 This is the versioning scheme I prefer for open source libraries: `major.minor.patch`. For example, the latest Scribble version at the time of writing is `8.7.0`: major = 8, minor = 7, patch = 0.
 
@@ -19,3 +19,15 @@ Examples:
 - SDL database update = patch version
 - Removal of an API feature = major version
 - Adding a new optional argument = typically a minor version, sometimes a major version depending on new default behaviour
+
+&nbsp;
+
+## Pull Requests
+
+I'll only accept pull requests that fulfill the following requirements:
+
+- **Small** — The PR should continue as few changes as possible. If it's a big change, it's harder to review.
+- **Specific** — The PR should address only the specific feature or bug and not contain multiple fixes for multiple things at the same time.
+- **Solution-oriented** — The PR should cover a known issue. PRs that "tidy up" a project are unhelpful.
+- **Commented** — Comment your code, folks
+- **No IDE / GameMaker updates** — The PR should not require updating the GameMaker IDE or using a different runtime than the library is built for.
