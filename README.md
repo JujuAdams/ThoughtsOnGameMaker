@@ -37,7 +37,93 @@ I hate writing documentation. Special love is given to people who fix typos or b
 
 &nbsp;
 
-## GameMaker Design Pattern 1: Singletons
+## GameMaker Design Pattern 1: Application Initialization
+
+There's a lot to do when a game boots up. Loading savedata, initializing global state-tracking variables, loading and applying game settings, import localisation, position the window or setting fullscreen mode, showing a short intro video, fetching texture pages, establishing connections to analytics services, the list goes on and on. It's often the case that these steps are asynchronous and some actions rely on the result of previous steps. In some cases, initialization might take so long that it's necessary to show a loading bar. I've found in my professional work that most every game is improved by a clear and organised initialisation flow.
+
+To describe it simply, game initialization should be executed as a finite state machine that advances through a list of states. This finite state machine should be executed by a single instance of an initialization object in a separate room that is the first room to be visited. At a high level, a basic initialization flow might look like this:
+
+1. Initialize settings
+2. Start asynchronous load of settings
+3. Wait for settings to finish loading
+4. Apply window/fullscreen setting
+5. Move to the next room (typically a main menu)
+
+Seems easy enough. As mentioned above, this process should be handled by a specific object dedicated to the task. Let's call that object `oAppInitialize`. An instance of this object should be created in the first room in the game e.g. `rAppInitialize`. This ensures that the app isn't accidentally reinitialized (though advanced users may well want to figure out ways to reinitialize their game for the occasional situation where that's helpful).
+
+The meat of this design pattern is the simple finite state machine in `oAppInitialize`. Example code follows:
+
+```gml
+/// Create Event
+initPhase = 0;
+initPhaseTimer = 0;
+
+loadBuffer = undefined;
+loadID = undefined;
+loadState = 0; //-1 = error, 0 = pending, 1 = success
+
+
+
+/// Step Event
+if (initPhaseTimer > 0)
+{
+    --initPhaseTimer;
+}
+else switch(initPhase)
+{
+    case 0:
+        global.settings = {
+            fullscreen: true,
+        };
+        
+        initPhase = 1;
+    break;
+    
+    case 1:
+        loadBuffer = buffer_create(1024, buffer_grow, 1);
+        loadID = buffer_load_async(buffer, filename, 0, -1);
+        loadState = 0;
+        
+        initPhase = 2;
+    break;
+
+    case 2:
+        if (loadState != 0)
+        {
+            if (loadState == 1)
+            {
+                global.settings.fullscreen = buffer_read(loadBuffer, buffer_bool);
+            }
+            
+            buffer_delete(loadBuffer);
+            initPhase = 3;
+        }
+    break;
+
+    case 3:
+        window_set_fullscreen(global.settings.fullscreen);
+        
+        initPhaseTimer = 10;
+        initPhase = 4;
+    break;
+
+    case 4:
+        room_goto_next();
+    break;
+}
+
+
+
+/// Async Save/Load Event
+if (async_load[? "id"] == loadID)
+{
+    loadState = async_load[? "status"]? 1 : -1;
+}
+```
+
+&nbsp;
+
+## GameMaker Design Pattern 2: Singletons
 
 The [singleton pattern](https://en.wikipedia.org/wiki/Singleton_pattern) is one of the most common design patterns and it's, pleasingly, one of the easiest to implement in GameMaker.
 
