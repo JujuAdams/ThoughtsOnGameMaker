@@ -172,3 +172,62 @@ That's it! Common use cases for singleton objects are background music control a
 Even novice users have probably encountered the singleton pattern and I'd profer that every single commercial GameMaker game ever made uses the singleton pattern somewhere. But there are limitations. The singleton pattern is effective for handling music playback or gamepad input, stuff that reasonably is global in scope and affects everything in a game, but the singleton pattern should **never** be used outside of that or you'll run into problems as your game grows during development.
 
 The most common over-use of the singleton pattern is when creating the player instance. Assuming that one single player instance always exists not only makes a multiplayer conversion incredibly challenging (moreso than it already is) but relying on a single player instance existing at all times is also liable to introduce severe crashes. The singleton pattern should be used sparingly and only in situations where what that singleton has to do is very specific.
+
+&nbsp;
+
+## GameMaker Design Pattern 3: Evacuating Global Scope
+
+Whilst you might not someone writing a library for public consumption, it's a good habit to get into to view independent sections of your code as libraries. You might want to call them "modules" or "components" or "subsystem" or just "APIs", but at any rate, keeping your code cleanly divided makes maintenance and teamwork much much easier. There has been endless ink spilt on the topic of code encapsulation and I wouldn't pretend to have anything to add to the discussion other than "encapsulation is good".
+
+GameMaker, regrettably, can make good practice hard, however, and the ease by which we can stuff more and more variables into global scope allows bad habits. When writing libraries, it's often useful to hold information in global scope for convenience and, from time to time, necessity. But this has negative side effects: Because a game and any libraries necessarily share the same global scope, it's easy to mix up variables from different components. A variable called `global.cameraX` could be in use by any library or come from game code itself. In the worst case, critical global variables could be accidentally overwritten by other bits of code, especially if those global variables have a commonly used name (such as `global.debugMode`). Additionally, having a bunch of variables in global scope, even if intelligently and clearly named, clogs up GameMaker's debug view. This can make it very hard for anyone using a library to find the global variables they're interested in. It's important to consider the user experience of using a library from multiple perspectives and ensuring a library doesn't make the user experience worse when debugging is part of that.
+
+Fortunately, we can maintain variables in global scope without using global variables. This is done by creating a `static` reference to a struct returned from a globally scoped function and then storing variables inside that struct. Here's an example:
+
+```gml
+//This function returns a struct that the function itself holds statically
+//This means that every call to __ExampleGlobal() will return the same struct
+function __ExampleGlobal()
+{
+    static _global = {
+        __variable: undefined,
+    };
+    return _global;
+}
+
+//This function sets a value in the static struct
+function ExampleSet(_value)
+{
+    static _global = __ExampleGlobal();
+    _global.__variable = _value;
+}
+
+//This function returns the value from the static struct
+function ExampleGet()
+{
+    static _global = __ExampleGlobal();
+    return _global.__variable;
+}
+```
+
+This approach can be extended to include an initialization flow as well. There's a particular advantage to this method because the initialization process happen "just in time", that is to say that the initialization process happens no matter which endpoint function (`ExampleSet()` or `ExampleGet()`) is called first. This reduces the need for explicit initialization calls which is often convenient.
+
+```gml
+function __ExampleGlobal()
+{
+    //Instead of initializing the static to a struct, initialize to some invalid value
+    static _global = undefined;
+
+    //If our return value is valid then return it
+    //This means that the first time this function is run the subsequent code is executed
+    if (_global != undefined) return _global;
+
+    //This code will only run once, and only when it needs to
+    show_debug_message("The example code initialized");
+    
+    _global = {};
+    _global.__variable = undefined;
+
+    //Make sure you return a proper value!
+    return _global;
+}
+```
