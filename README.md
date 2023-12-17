@@ -231,3 +231,24 @@ function __ExampleGlobal()
     return _global;
 }
 ```
+
+You can also use this `static` trick in constructors too if need be, such that the "global" variables are accessible from the scope of any instance of the constructor. As a final note, you may still want to access a library's global variables when debugging for your own purposes. The easiest way to do this is to simply make a global variable that points at the static struct e.g.
+
+```gml
+function __ExampleGlobal()
+{
+    static _global = undefined;
+    if (_global != undefined) return _global;
+
+    show_debug_message("The example code initialized");
+    
+    _global = {};
+
+    //Allow access to the static struct from the debugger
+    if (debug_mode) global.exampleLibrary = _global;
+
+    _global.__variable = undefined;
+
+    return _global;
+}
+```
