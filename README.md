@@ -57,7 +57,7 @@ I hate writing documentation. Special love is given to people who fix typos or b
 
 ## Formatting
 
-You shouldn't care what formatting someone uses in GameMakerLand. If you must know, I use the following formatting rules:
+You shouldn't care what formatting someone uses in GameMakerLand unless you're on the same project, at which point the first person to write a line of code wins and you should do what they do. If you must know, I use the following formatting rules:
 
 1. Spaces, not tabs. I want to have complete control over how code looks.
 2. Custom asset ordering in the asset browser. I want to have complete control over how scripts are introduced to the user.
