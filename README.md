@@ -26,9 +26,9 @@ Examples:
 
 Over the years I've found I've been using and re-using particular GML techniques to solve problems. Below is a list of links to pages that explain them:
 
-- [Technique 1 - Initialization](pattern-1-initialization.md)
-- [Technique 2 - Singletons](pattern-2-singletons.md)
-- [Technique 3 - Evacuating global namespace](pattern-3-evacuation.md)
+- [Technique 1 - Initialization](technique-1-initialization.md)
+- [Technique 2 - Singletons](technique-2-singletons.md)
+- [Technique 3 - Evacuating global namespace](technique-3-evacuation.md)
 - Technique 4 - Config macros
 - Technique 5 - Fluent interface
 - Technique 6 - Multiline macros
@@ -36,6 +36,7 @@ Over the years I've found I've been using and re-using particular GML techniques
 - Technique 8 - Callbacks
 - Technique 9 - Pseudo-objects
 - Technique 10 - Constructor pooling
+- Technique 11 - Destructors
 
 &nbsp;
 
