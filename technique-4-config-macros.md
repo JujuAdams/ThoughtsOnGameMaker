@@ -1,3 +1,7 @@
 # GameMaker Technique 4: Config Macros
 
 &nbsp;
+
+Macros are a way to insert values into your code by referencing a handy name rather than by reusing the same value in multiple places. For example, you could comfortably set a gravity value that is shared across many objects by using a macro. Using macros in this way allows you to keep consistency across many places in your codebase even if the value itself needs to change. Any change to the macro, which is stored in one location, is propagated across every use of that macro. Macros are very useful in this role.
+
+Macros have another interesting property, however. When you compile your game, and use of a macro is replaced by GameMaker's precompiler with the literal content of the macro. A macro is not a variable, therefore. A variable has to be evaluated at runtime in order for your game to know what value it contains. This means looking up a value at a particular location in memory, reading the value, then using that value in a calculation. Macros are a bit different - because the literal value is strictly defined, the memory look-up doesn't need to be done. There's an even more useful side effect of this: if you use a macro in an if-statement, if could be the case that the entire if-statement can be evaluated whe compiling the game. This means the if-statement might literally not exist at runtime, leading to significant performance boosts.
