@@ -28,7 +28,7 @@ Over the years I've found I've been using and re-using particular design pattern
 
 - [Pattern 1 - Initialization](pattern-1-initialization.md)
 - [Pattern 2 - Singletons](pattern-2-singletons.md)
-- [Pattern 3 - Evacuating Global Namespace](pattern-1-evacuation.md)
+- [Pattern 3 - Evacuating Global Namespace](pattern-3-evacuation.md)
 
 &nbsp;
 
