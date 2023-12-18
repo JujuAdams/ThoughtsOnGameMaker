@@ -1,4 +1,4 @@
-# GameMaker Design Pattern 1: Application Initialization
+# GameMaker Technique 1: Application Initialization
 
 &nbsp;
 
