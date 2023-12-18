@@ -1,4 +1,4 @@
-# GameMaker Design Pattern 3: Evacuating Global Scope
+# GameMaker Technique 3: Evacuating Global Scope
 
 &nbsp;
 
