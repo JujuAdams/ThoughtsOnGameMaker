@@ -11,11 +11,18 @@ We can lean into the performant nature of macros. Using macros to control config
 Here's an example:
 
 ```gml
-#macro TREE_BLEND  c_ltgray
+#macro TREE_DEBBUG  true
 
 //Imagine we have hundreds of trees...
 with(oTree)
 {
-    draw_sprite_ext(sTree, 0, x, y, 1, 1, 0, TREE_BLEND, 1);
+    if (TREE_DEBUG) show_debug_message(string(id) + ": " + string(x) + "," + string(y));
+    draw_sprite(sTree, 0, x, y);
 }
+```
+
+Macros can also be used in combination with GameMaker's configuration profiles to allow you to alter behaviour.
+
+```gml
+#macro 
 ```
