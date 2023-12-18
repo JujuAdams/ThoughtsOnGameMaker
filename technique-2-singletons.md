@@ -1,4 +1,4 @@
-# GameMaker Design Pattern 2: Singletons
+# GameMaker Technique 2: Singletons
 
 &nbsp;
 
