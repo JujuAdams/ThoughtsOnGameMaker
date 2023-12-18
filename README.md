@@ -63,6 +63,6 @@ You shouldn't care what formatting someone uses in GameMakerLand. If you must kn
 2. Custom asset ordering in the asset browser. I want to have complete control over how scripts are introduced to the user.
 3. K&R style for curly brackets (curly brackets start on the new line)
 4. camelCase for variables and assets, PascalCase for functions/static methods, SCREAMING_SNAKE_CASE for constants/macros
-5. Comments shouldn't hide mu English upbringing. The actual API and internal code should use American spellings wherever relevant. UK spelling for constants etc. should not be supported.
+5. The actual API and internal code should use American spellings wherever relevant. UK spelling for constants etc. should not be supported. Comments are fair game for Britishisms, however.
 
 You might find some older libraries use a different formatting standard. Time makes fools of us all.
