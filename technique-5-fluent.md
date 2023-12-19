@@ -41,7 +41,7 @@ VertexBegin(buffer, format)
 
 This is much more compact and, at least for me, way easier to read. The trick here is that `VertexBegin()` returns a struct and each following method call returns the struct itself. This enables methods to be chained together using the same scope for each method call. Here's how we might make this fluent interface:
 
-```
+```gml
 function VertexBegin(_buffer, _format)
 {
     //Start building out the vertex buffer
@@ -91,3 +91,5 @@ function VertexBegin(_buffer, _format)
     return new _inner(_buffer);
 }
 ```
+
+For a practical example, see [Scribble](https://www.github.com/jujuadams/Scribble). Scribble's usage is looser than the above vertex buffer exampleand includes a layer of caching. However, the basic technique remains the same: methods should return `self` so that further methods can be called in the same scope.
