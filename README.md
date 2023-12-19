@@ -13,7 +13,7 @@ Over the years I've found I've been using and re-using particular GML techniques
 - [Technique 3 - Evacuating global namespace](technique-3-evacuation.md)
 - [Technique 4 - Config macros](technique-4-config-macros.md)
 - [Technique 5 - Fluent interface](technique-5-fluent.md)
-- Technique 6 - Multiline macros
+- [Technique 6 - Multiline macros](technique-6-multiline.md)
 - Technique 7 - Pub/Sub
 - Technique 8 - Callbacks
 - Technique 9 - Pseudo-objects
