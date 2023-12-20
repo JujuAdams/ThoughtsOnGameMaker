@@ -19,6 +19,21 @@ Over the years I've found I've been using and re-using particular GML techniques
 
 &nbsp;
 
+## Formatting
+
+You shouldn't care what formatting someone uses in GameMakerLand unless you're on the same project, at which point the first person to write a line of code wins and you should do what they do. If you must know, I use the following formatting rules:
+
+1. Spaces, not tabs. I want to have complete control over how code looks.
+2. Custom asset ordering in the asset browser. I want to have complete control over how scripts are introduced to the user.
+3. K&R style for curly brackets (curly brackets start on the new line)
+4. camelCase for variables and assets, PascalCase for functions/static methods, SCREAMING_SNAKE_CASE for constants/macros
+5. The actual API and internal code should use American spellings wherever relevant. UK spelling for constants etc. should not be supported. Comments are fair game for Britishisms, however.
+6. Local (`var`) variables should be prefixed with a single `_` underscore. Private variables, i.e. variables that should not be tampered with or accessed, should be prefixed with two `__` underscores. Woe betide the developer who accesses private variables and expects everything to go smoothly.
+
+You might find some older libraries use a different formatting standard. Time makes fools of us all.
+
+&nbsp;
+
 ## Versioning
 
 This is the versioning scheme I prefer for open source libraries: `major.minor.patch`. For example, the latest Scribble version at the time of writing is `8.7.0`: major = 8, minor = 7, patch = 0.
@@ -49,17 +64,3 @@ I'll only accept pull requests that fulfill the following requirements:
 - **No IDE / GameMaker updates** — The PR should not require updating the GameMaker IDE or using a different runtime than the library is built for.
 
 I hate writing documentation. Special love is given to people who fix typos or broken links in documentation, or generally improve documentation at all.
-
-&nbsp;
-
-## Formatting
-
-You shouldn't care what formatting someone uses in GameMakerLand unless you're on the same project, at which point the first person to write a line of code wins and you should do what they do. If you must know, I use the following formatting rules:
-
-1. Spaces, not tabs. I want to have complete control over how code looks.
-2. Custom asset ordering in the asset browser. I want to have complete control over how scripts are introduced to the user.
-3. K&R style for curly brackets (curly brackets start on the new line)
-4. camelCase for variables and assets, PascalCase for functions/static methods, SCREAMING_SNAKE_CASE for constants/macros
-5. The actual API and internal code should use American spellings wherever relevant. UK spelling for constants etc. should not be supported. Comments are fair game for Britishisms, however.
-
-You might find some older libraries use a different formatting standard. Time makes fools of us all.
