@@ -27,8 +27,6 @@ Over the years I've found I've been using and re-using particular GML techniques
 
 - Global functions intended for public use should have their own scripts in the asset browser. The asset browser can, and often should, act as a menu of the delicious code on offer and as a reminder of what functions are available. Glancing at the asset browser is often faster than checking documentation.
 
-- Use long variable names. If you use abbreviations, make those abbreviations obvious and consistent.
-
 &nbsp;
 
 ## Formatting
