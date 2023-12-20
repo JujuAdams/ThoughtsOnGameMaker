@@ -1,5 +1,7 @@
 # Code Reuse
 
+[*Originally written for the GameMaker community.*](https://forum.gamemaker.io/index.php?threads/what-code-do-you-reuse-in-many-projects.107693/#post-649068)
+
 &nbsp;
 
 Over at Broxcorp we have a template project that we use for every new prototype / project. A few of these are libraries I write and maintain, these can be found via GitHub repos, but most are bespoke to the studio. Each component is its own API that we can slice out of the project if we're not using it or we can import if we need it.
