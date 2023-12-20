@@ -15,8 +15,7 @@ Over the years I've found I've been using and re-using particular GML techniques
 - [Technique 5 - Fluent interface](technique-5-fluent.md)
 - [Technique 6 - Multiline macros](technique-6-multiline.md)
 - [Technique 7 - Pseudo-objects](technique-7-pseudo-objects.md)
-- Technique 8 - Constructor pooling
-- Technique 9 - Destructors
+- [Technique 8 - Destructors](technique-8-destructors.md)
 
 &nbsp;
 
