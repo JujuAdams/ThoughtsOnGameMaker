@@ -19,6 +19,12 @@ Over the years I've found I've been using and re-using particular GML techniques
 
 &nbsp;
 
+## Code Reuse
+
+Code reuse is good actually. [Read more here.](code-reuse.md)
+
+&nbsp;
+
 ## Formatting
 
 You shouldn't care what formatting someone uses in GameMakerLand unless you're on the same project, at which point the first person to write a line of code wins and you should do what they do. If you must know, I use the following formatting rules:
