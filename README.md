@@ -21,7 +21,7 @@ Over the years I've found I've been using and re-using particular GML techniques
 
 ## Code Reuse
 
-Code reuse is good actually. Everything should be an API. [Read more here.](code-reuse.md)
+Code reuse is good actually. Everything should be an API. [Read more here](code-reuse.md).
 
 &nbsp;
 
