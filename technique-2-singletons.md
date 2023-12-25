@@ -4,7 +4,7 @@
 
 The [singleton pattern](https://en.wikipedia.org/wiki/Singleton_pattern) is one of the most common design patterns and it's, pleasingly, one of the easiest to implement in GameMaker.
 
-The basic idea with the singleton pattern is that one instance - and only one - instance of a particular object should exist. This instance should also **always** exist. You can extend this basic idea out to structs as well. The core idea is that you have a singular magical instance of an object that you can always refer to. This instance is also very commonly persistent so that it carries over between rooms.
+The basic idea with the singleton pattern is that one instance - and **only** one instance - of a particular object should exist. This instance should also **always** exist. You can extend this basic idea out to structs as well. The core idea is that you have a singular magical instance of an object that you can always refer to. This instance is also very commonly persistent so that it carries over between rooms.
 
 The utility of this is probably immediately apparent but let's talk about it. Having a specific object set up to manage global functionality keeps all your code in one place and it makes it very clear in your codebase which instance is responsible for managing that functionality. This makes it easier to modularise code if you're into that but, more importantly, it makes the code plain easier to read. That the instance is persistent also means that a singleton can be used to persist state between rooms without clogging up namespace with a global variable.
 
