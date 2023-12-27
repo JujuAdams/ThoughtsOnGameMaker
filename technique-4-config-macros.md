@@ -21,8 +21,13 @@ with(oTree)
 }
 ```
 
-Macros can also be used in combination with GameMaker's configuration profiles to allow you to alter behaviour.
+Macros can also be used in combination with GameMaker's [configuration profiles](https://manual.gamemaker.io/monthly/en/Settings/Configurations.htm) to allow you to alter behaviour. This is helpful if you want to make sure development behaviour (cheat mode) or expensive "safe mode" behaviours don't make it out into the wild.
 
 ```gml
-#macro 
+#macro TREE_DEBUG       true  //Default to enabling debug behaviour
+#macro TREE_DEBUG:Ship  false  //Except if we're in the "Ship" configuration
 ```
+
+A word of advice on GameMaker's configurations though: if you are in a configuration, any changes you make to the project as a whole are for that configuration only. In the example above we have a "Ship" configuration. If we were to put the IDE into the Ship configuration and then change texture page settings etc. then those changes would **not** be propagated to the "Default" configuration. This has happened to me and my colleagues, without exaggeration, so many times that I have lost count. Prior to [Skies Of Chaos](https://www.youtube.com/watch?v=dSyWXQv3HOY) being released we were rapidly swapping between configurations to create internal builds, QA builds, and production builds and over a couple of weeks we accumulated hundreds of texture group assignments had to be redone because we were making changes in the wrong config without releasing it. The poor configuration UX has caused endless headaches for me since GameMaker Studio 1 and it is frankly shitty design that allows misunderstandings as deep and as frequent as this to occur.
+
+At any rate, whilst configurations are genuinely useful (classic example being SIEE versus SIEA builds for PlayStation), it's probably best to treat configurations as a "last in the chain" toggle. By this I mean you should be developing for the majority of the time in the default configuration. This means any changes you make will propagate to child configurations which keeps every consistent. Only when you need to run off a build for QA / localisation QA / compliance / production etc. should you be using a configuration. This highly conservative use of the feature ensures you don't make.
