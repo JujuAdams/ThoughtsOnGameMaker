@@ -42,6 +42,8 @@ You shouldn't care what formatting someone uses in GameMakerLand unless you're o
 
 You might find some older libraries use a different formatting standard. Time makes fools of us all.
 
+The choice to vary up the captialisation rules in my own particular way might strike people as unorthodox. This is a way of writing code that has evolved organically and no doubt will continue to evolve. The choice to differentiate variables and functions works around GML's liberal use of the global namespace. The use of camelCase and PascalCase in general also avoid running into conflicts with GameMaker's native snake_case functions and constants.
+
 &nbsp;
 
 ## Versioning
