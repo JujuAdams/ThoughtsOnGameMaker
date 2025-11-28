@@ -56,6 +56,6 @@ function ExampleB(_value)
 }
 ```
 
-Multiline macros must be written such that every line, apart from the final line, has a `\` backslash at the end. Multiline macros also can't have empty lines in them (i.e. a line that's just a backslash) so you'll need to use `;\` for an empty line.
+Multiline macros must be written such that every line, apart from the final line, has a `\` backslash at the end. Multiline macros also can't have empty lines in them so you'll need to use `\` to vertically space out code.
 
 The example above is really simple but multiline macros can get super complex if you want them to be. For some practical examples of multiline macros, see [Scribble](https://github.com/JujuAdams/Scribble/blob/master/scripts/__scribble_gen_6_build_lines/__scribble_gen_6_build_lines.gml) and [Input](https://github.com/offalynne/Input/blob/master/scripts/__input_macros/__input_macros.gml).
