@@ -122,7 +122,7 @@ function SafeSurface(_width, _height) constructor
             surface_reset_target();
         }
         
-        return __destructors.surface;
+        return __destructor.surface;
     }
 }
 ```
