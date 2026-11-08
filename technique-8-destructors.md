@@ -1,6 +1,6 @@
 # GameMaker Technique 8 - Destructors
 
-I was unsatisfied by the over-complex solution for [destructors](technique-8-destructors-legacy.md) in GameMaker. I had an opportunity recently in commercial work to revisit the topic and I'm happy to say I found a solution that I'm more comfortable with. I am confident is more easily applied in practice.
+I was unsatisfied by the over-complex solution for [destructors](technique-8-destructors-legacy.md) in GameMaker. I had an opportunity recently in commercial work to revisit the topic and I'm happy to say I found a solution that I'm more comfortable with.
 
 For the uninitiated, a "destructor" is a callback that is executed when a struct is garbage collected. Destructors are an important tool to bridge the gap between automatically managed memory (structs and arrays) and user-managed memory (surfaces, buffers, grids, and so on). GameMaker will cheerfully clean up a struct without cleaning up any of the resources that the struct holds, leading to memory leaks. Memory leaks are often fatal for a program.
 
