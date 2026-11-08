@@ -2,7 +2,7 @@
 
 &nbsp;
 
-Ok, these aren't really destructors. I clickbaited you. Instead, we can simulate destructor-like behaviour by wrapping one struct in another and using weak references in a creative way. This technique isn't especially performant and has some shortcomings but may be of interest regardless.
+Ok, these aren't really destructors. Instead, we can simulate destructor-like behaviour by wrapping one struct in another and using weak references in a creative way. This technique isn't especially performant and has some shortcomings but may be of interest regardless.
 
 The goal with this technique is to allow us to detect when all references to a struct has been lost and, when that happens, execute some "last breath" code before that struct is gone for good. This is handy in situations where you need to clean up some data when something gets destroyed but you don't want to manually call a destroy function. As an example, you may have a struct that creates and holds a reference to a surface. When that struct is garbage collected, you want that surface to be cleaned up otherwise you have a memeory leak.
 
