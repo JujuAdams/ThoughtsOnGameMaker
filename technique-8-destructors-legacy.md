@@ -1,4 +1,9 @@
-# GameMaker Technique 8 - Destructors
+# GameMaker Technique 8 - Destructors (Old Version)
+
+&nbsp;
+
+> [!NOTE]
+> This is an old technique that has since been [superseded](technique-8-destructors.md).
 
 &nbsp;
 
