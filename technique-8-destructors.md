@@ -88,11 +88,12 @@ function SafeSurface(_width, _height) constructor
     __destructor = new Destructor();
     with(__destructor)
     {
+        //Only the destructor is allowed to know about the surface!
         surface = -1;
         
         callback = function()
         {
-            //Clean up the surface when the host is garbage collected
+            //Clean up the surface when the target (a `SafeSurface` struct) is garbage collected
             if (surface_exists(surface))
             {
                 surface_free(surface);
