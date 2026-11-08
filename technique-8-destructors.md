@@ -116,7 +116,7 @@ function SafeSurface(_width, _height) constructor
         //We access the surface via the destructor struct
         if (not surface_exists(__destructor.surface))
         {
-            destruc__destructoror.surface = surface_create(width, height);
+            __destrucor.surface = surface_create(width, height);
             surface_set_target(__destructor.surface);
             _initMethod();
             surface_reset_target();
