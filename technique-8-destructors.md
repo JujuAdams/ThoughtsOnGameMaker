@@ -2,7 +2,7 @@
 
 I was unsatisfied by the over-complex solution for [destructors](technique-8-destructors-legacy.md) in GameMaker. I had an opportunity recently in commercial work to revisit the topic and I'm happy to say I found a solution that I'm more comfortable with. I am confident is more easily applied in practice.
 
-For the uninitiated, a "destructor" is a callback that is executed when a struct is garbage collected. Destructors are an important tool to bridge the gap between automatically managed memory (structs and arrays) and user-managed memory (surfaces, buffers, grids, and so on). GameMaker will cheerfully clean up a struct without cleaning up any of the resources that the struct holds, leaking to memory leaks. Memory leaks are often fatal for a program.
+For the uninitiated, a "destructor" is a callback that is executed when a struct is garbage collected. Destructors are an important tool to bridge the gap between automatically managed memory (structs and arrays) and user-managed memory (surfaces, buffers, grids, and so on). GameMaker will cheerfully clean up a struct without cleaning up any of the resources that the struct holds, leading to memory leaks. Memory leaks are often fatal for a program.
 
 We cannot build a true destructor in GML as it not a feature of the language. Instead, we need to build systems that emulate destructors. We can write this emulation by checking when a struct has been destroyed by the garbage collector and then execute a callback in response to this. We do this with "weak references". We use `weak_ref_create()` to create a weak reference for a target struct (or instance). `weak_ref_alive()` should then be called frequently to determine if the target has been unalived by the garbage collector.
 
